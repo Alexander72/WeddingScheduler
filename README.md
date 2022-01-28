@@ -31,14 +31,28 @@ You need to cover with Unit-tests `WeddingService` using XUnit framework.
 
 ## Run Application
 
-To run the application run the following command:
+To run the containers run:
+
+```
+dokcer-compose up -d
+```
+
+Then, to run the application, execute the following command:
  ```
   docker-compose exec app dotnet run --project App
  ```
 
 ## Run Tests
 
-To run tests execute the following command:
+To run tests execute the following command (container should be started):
  ```
  docker-compose exec app dotnet test App.Tests
+```
+
+## Stop application
+
+To stop application bring down the container with command:
+
+```
+docker-compose down
 ```
