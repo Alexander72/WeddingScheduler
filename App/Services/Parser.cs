@@ -7,14 +7,7 @@ namespace App.Services
 {
     public class Parser
     {
-        string inputFileName;
-
-        public Parser(string inputFileName)
-        {
-            this.inputFileName = inputFileName;
-        }
-
-        public List<Guest> parseGuests()
+        public List<Guest> parseGuests(string inputFileName)
         {
             List<Guest> guests = new List<Guest>();
  

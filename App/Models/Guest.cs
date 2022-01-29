@@ -14,6 +14,11 @@ namespace App.Models
             this.workingWeekDayIndexes = workingWeekDayIndexes;
         }
 
+        public List<int> getWorkingWeekDayIndexes()
+        {
+            return workingWeekDayIndexes;
+        }
+
         public Boolean isWorkingAt(int weekDayIndex) 
         {
             return  workingWeekDayIndexes.Contains(weekDayIndex);

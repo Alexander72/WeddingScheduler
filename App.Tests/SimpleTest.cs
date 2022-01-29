@@ -2,7 +2,7 @@ using Xunit;
 
 namespace App.Tests
 {
-    public class WeddingServiceTest
+    public class SimpleTest
     {
         [Fact]
         public void testSomething()

@@ -9,21 +9,8 @@ namespace App
     {
         static void Main(string[] args)
         {
-            Parser parser = new Parser(@"/app/input.txt");
-            List<Guest> guests = parser.parseGuests();
-            
-            WeddingService weddingService = new WeddingService();
-            int dayIndexWhenEveryoneCanCome = weddingService.dayIndexWhenEveryoneCanCome(guests);
-
-            if (dayIndexWhenEveryoneCanCome != 0)
-            {
-                Console.WriteLine("What a luck!");
-                Console.WriteLine("Day index when everyone can come to the wedding: " + dayIndexWhenEveryoneCanCome);   
-            }
-            else
-            {
-                Console.WriteLine("Guests are busy people, not everyone can come :(");   
-            }
+            Application app = new Application(new Parser(), new WeddingService());
+            app.run();
         }
     }
 }
