@@ -12,11 +12,18 @@ namespace App
         private Parser parser;
         
         private WeddingService weddingService;
+        
+        private Printer printer;
 
-        public Application(Parser parser, WeddingService weddingService)
+        public Application(
+            Parser parser, 
+            WeddingService weddingService,
+            Printer printer
+        )
         {
             this.parser = parser;
             this.weddingService = weddingService;
+            this.printer = printer;
         }
 
         public void run()
@@ -35,21 +42,14 @@ namespace App
             
             int dayIndexWhenEveryoneCanCome = weddingService.dayIndexWhenEveryoneCanCome(guests);
 
-            if (dayIndexWhenEveryoneCanCome != 0)
+            if (dayIndexWhenEveryoneCanCome == 0)
             {
-                Console.WriteLine("What a luck!");
-                Console.WriteLine("Day index when everyone can come to the wedding: " + dayIndexWhenEveryoneCanCome);   
-            }
-            else
-            {
-                Console.WriteLine("Guests are busy people, not everyone can come :(");
-                Console.WriteLine("Maybe we should not invite:");
                 List<Guest> inconvenientGuests = weddingService.getTheMostInconvenientGuests(guests);
-                foreach (var inconvenientGuest in inconvenientGuests)
-                {
-                    Console.WriteLine(inconvenientGuest.getName());
-                }
+                printer.printInconvinientGuests(inconvenientGuests);
+                return;
             }
+            
+            printer.printSuccessfulScenario(dayIndexWhenEveryoneCanCome);  
         }
     }
 }

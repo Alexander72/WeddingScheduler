@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using App.Models;
-using App.Services;
+﻿using App.Services;
 
 namespace App
 {
@@ -9,7 +6,12 @@ namespace App
     {
         static void Main(string[] args)
         {
-            Application app = new Application(new Parser(), new WeddingService());
+            Application app = new Application(
+                new Parser(),
+                new WeddingService(),
+                new Printer()
+            );
+            
             app.run();
         }
     }
