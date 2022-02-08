@@ -122,7 +122,7 @@ test solution. Read more about how to add PackageReference in the solution
 To initialize the application start containers by executing the following command:
 
 ```
-dokcer-compose up -d
+docker-compose up -d
 ```
 
 ### Run program
