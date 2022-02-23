@@ -7,7 +7,7 @@ namespace App
 {
     public class Application
     {
-        private const string INPUT_FILE_PATH = @"/app/input.txt";
+        private const string INPUT_FILE_PATH = @"input.txt";
         
         private Parser parser;
         
@@ -30,9 +30,13 @@ namespace App
         {
             List<Guest> guests;
             
-            try
-            {
+            try {
                 guests = parser.parseGuests(INPUT_FILE_PATH);
+                
+                if (guests.Count == 0) {
+                    Console.WriteLine("You have no friends.");
+                    return;
+                } 
             }
             catch
             {

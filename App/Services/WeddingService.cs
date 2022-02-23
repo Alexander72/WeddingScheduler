@@ -47,8 +47,16 @@ namespace App.Services
                     dayIndexWithMinimumBusyPeople = entry.Key;
                 }
             }
+
+            if (dayIndexWithMinimumBusyPeople == 0)
+            {
+                return new List<Guest>();
+            }
+            else
+            {
+                return guestsWorkingDaysMatrix[dayIndexWithMinimumBusyPeople];
+            }
             
-            return guestsWorkingDaysMatrix[dayIndexWithMinimumBusyPeople];
         }
 
         private static Dictionary<int, List<Guest>> buildGuestsWorkingDaysMatrix(List<Guest> guests)
