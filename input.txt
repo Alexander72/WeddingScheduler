@@ -1,5 +1,2 @@
-Lev: 2 3 4 5
-Mariya: 2 3 4 5
-Katya: 2 3 4 5
-Lenar: 3 4 5
-Kesha: 5 6
+Lev: 7 3 1
+Mariya: 5 2
